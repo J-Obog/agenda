@@ -1,4 +1,4 @@
-const { Schema, model, ObjectId } = require("@config")
+const { Schema, model, ObjectId } = require("../config")
 
 const itemSchema = new Schema({
     title: {
@@ -12,7 +12,7 @@ const itemSchema = new Schema({
     class_id: {
         type:ObjectId, 
         required:true,
-        ref: "Class"
+        ref: "Course"
     }
 }, {
     collection: "item"

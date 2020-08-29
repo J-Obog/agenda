@@ -1,6 +1,6 @@
-const { Schema, model } = require("@config")
+const { Schema, model } = require("../config")
 
-const classSchema = new Schema({
+const courseSchema = new Schema({
     name: {
         type:String,
         required:true
@@ -11,8 +11,8 @@ const classSchema = new Schema({
         default: "#0a0a0a"
     }
 }, {
-    collection: "class"
+    collection: "course"
 })
 
 
-module.exports = model("Class", classSchema)
+module.exports = model("Course", courseSchema)

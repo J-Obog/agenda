@@ -1,13 +1,7 @@
 const { Router } = require("express")
-const router = Router() 
-const controller = require("./controller")
+const router = Router()
 
-
-router.route("/item")
-.get(controller.getAllItems)
-.post(controller.createNewItem)
-
-router.route("/class")
-.post(controller.createNewClass) 
+router.use("/item", require("./item"))
+router.use("/course", require("./course"))
 
 module.exports = router

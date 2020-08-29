@@ -2,20 +2,24 @@ version: "3"
 
 services: 
     backend: 
-        context: ./backend/src
         container_name: "express_server" 
-        dockerfile: Dockerfile
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
         ports:
             - "8000:8080"
 
     frontend:
-        context: ./frontend
+        stdin_open: true
         container_name: "react_web"
-        dockerfile: Dockerfile
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
         ports: 
             - "3000:3000"
     
     database:
+        container_name: "mongo_store"
         image: mongo:latest
         ports:
             - 27017:27017
