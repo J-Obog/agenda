@@ -1,0 +1,11 @@
+#frontend
+node_modules
+frontend/app/.pnp
+frontend/app/.pnp.js
+frontend/app/coverage
+frontend/app/build
+frontend/app/.DS_Store
+frontend/app/.env.*
+frontend/app/npm-debug.log*
+frontend/app/yarn-debug.log*
+frontend/app/yarn-error.log*

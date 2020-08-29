@@ -1,0 +1,26 @@
+version: "3" 
+
+services: 
+    backend: 
+        context: ./backend/src
+        container_name: "express_server" 
+        dockerfile: Dockerfile
+        ports:
+            - "8000:8080"
+
+    frontend:
+        context: ./frontend
+        container_name: "react_web"
+        dockerfile: Dockerfile
+        ports: 
+            - "3000:3000"
+    
+    database:
+        image: mongo:latest
+        ports:
+            - 27017:27017
+        volumes:
+            - mongodb_data_container:/data/db
+                
+volumes:
+    mongodb_data_container:
